@@ -21,9 +21,9 @@ type YearRow = {
 };
 
 function formatCurrency(value: number): string {
-  return new Intl.NumberFormat("ru-RU", {
+  return new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "RUB",
+    currency: "USD",
     maximumFractionDigits: 0,
   }).format(value);
 }
@@ -133,7 +133,7 @@ export default function CompoundInterestCalculator() {
           </h2>
           <div className="space-y-5">
             <NumberField
-              label="Начальная сумма, ₽"
+              label="Начальная сумма, $"
               value={principal}
               min={0}
               step={1000}
@@ -156,7 +156,7 @@ export default function CompoundInterestCalculator() {
               onChange={setYears}
             />
             <NumberField
-              label="Ежемесячное пополнение, ₽"
+              label="Ежемесячное пополнение, $"
               value={monthlyContribution}
               min={0}
               step={500}
